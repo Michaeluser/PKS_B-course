@@ -11,7 +11,7 @@ Install [Node.js](https://nodejs.org/en/download) and PNPM.
 3. Select package manager `with`  **pnpm**.
 
 
-Navigate to `/path/to/PKS_B/lectures/` and run
+Navigate to `/path/to/PKS_B-course/lectures/` and run
 
 ```bash
 pnpm install
