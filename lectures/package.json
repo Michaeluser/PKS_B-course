@@ -1,0 +1,25 @@
+{
+  "name": "pks",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build-l0": "slidev build --out dist-l0 --base /slides/l0/ l0-course-organization.md",
+    "dev-l0": "slidev l0-course-organization.md",
+    "export-l0": "slidev export l0-course-organization.md",
+    "build-l1": "slidev build --out dist-l1 --base /slides/l1/ l1-intro-to-network.md",
+    "dev-l1": "slidev l1-intro-to-network.md",
+    "export-l1": "slidev export l1-intro-to-network.md",
+    "build-l2": "slidev build --out dist-l2 --base /slides/l2/ l2-link.md",
+    "dev-l2": "slidev l2-link.md",
+    "export-l2": "slidev export l2-link.md",
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.1.0",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "vue": "^3.5.18"
+  }
+}

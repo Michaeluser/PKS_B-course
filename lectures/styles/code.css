@@ -1,0 +1,26 @@
+.slidev-code {
+  white-space: pre-wrap;
+}
+
+.slidev-code-line-numbers .no-line-numbers .slidev-code code .line::before {
+  display: none;
+}
+
+a.playground {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+div[layout="two-cols"] div.col-right {
+  padding-left:10px;
+   padding-top: 53px;
+}
+
+.slidev-layout h1 + p,
+.slidev-layout h1 + ul li:first-child,
+.slidev-layout h2 + p,
+.slidev-layout h2 + ul li:first-child,
+.slidev-layout h3 + p,
+.slidev-layout h3 + ul li:first-child {
+  @apply text-black opacity-100;
+}
