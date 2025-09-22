@@ -1,2 +1,3 @@
-# PKS_B-course
-Computer and Communication Networks(PKS_B) @ FIIT STU in Bratislava
+# Computer and Communication Networks - Počítačové a komunikačné siete (PKS_B) 2025/2026
+
+# Introduction to computer networks
