@@ -26,7 +26,7 @@ It has a large user base and well-documented support, including a [user-guide](h
 
 ## Task 1
 
-Analyze captured network traffic to understand headers at different protocol layers (Ethernet, IP, TCP/UDP, etc.). Follow the instructions and examine the headers of the selected frames at all layers. You can use [help guide](./analyze_frames.pdf) that contains the structure of the headers. Replace the value with the corresponding protocol/flag name, if possible.
+Analyze captured network traffic to understand headers at different protocol layers (Ethernet, IP, TCP/UDP, etc.). Follow the instructions and examine the headers of the selected frames at all layers. You can use [help guide](./analyze_frames.pdf) that contains the structure of the headers. Replace the value with the corresponding protocol acronym/flag name, if possible.
 
 1. Examine packet no. 2 in [trace-26](./pcaps/trace-26.pcap):
 
@@ -57,6 +57,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
+    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -72,6 +73,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Sequence Number |                  |
     | Acknowledgment Number |                  |
     | Header Length   |                  |
+    | Flags           |                  |
     | Checksum        |                  |
 
 3. Examine packet no. 26 in [trace-12](./pcaps/trace-12.pcap):
@@ -93,6 +95,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
+    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -108,6 +111,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Sequence Number |                  |
     | Acknowledgment Number |                  |
     | Header Length   |                  |
+    | Flags           |                  |
     | Checksum        |                  |
 
 4. Examine packet no. 908 in [trace-12](./pcaps/trace-12.pcap):
@@ -129,6 +133,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
+    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -150,7 +155,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     |-----------------|------------------|
     | QR              |                  |
 
-5. Find the response corresponding to packet no. 908 and examine its contents:
+5. Find the response corresponding to packet no. 908 and examine L3 header (Help: check no. 922):
    
     a) Layer 2 header:
 
@@ -169,6 +174,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
+    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -209,6 +215,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
+    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -218,13 +225,14 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Type            |                  |
     | Code            |                  |
 
-    c) Find the response corresponding to packet no. 2 and examine its contents:
+    c) Find the response corresponding to packet no. 2 and examine L3 header (Help: check `info` column):
 
     | Field           |  Value           |
     |-----------------|------------------|
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
+    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -255,7 +263,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Hop Limit       |                  |
     | Source Addr     |                  |
     | Destination Addr|                  |
-
 
 ## Task 2
 
