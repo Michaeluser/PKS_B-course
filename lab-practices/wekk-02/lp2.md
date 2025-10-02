@@ -48,10 +48,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source MAC      |                  |
     | Length / Type   |                  |
     | Protocol Addr Type |                  |
-    | Sender MAC Addr |                  |
-    | Sender IP Addr  |                  |
-    | Target MAC Addr |                  |
-    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -89,10 +85,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source MAC      |                  |
     | Length / Type   |                  |
     | Protocol Addr Type |                  |
-    | Sender MAC Addr |                  |
-    | Sender IP Addr  |                  |
-    | Target MAC Addr |                  |
-    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -130,10 +122,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source MAC      |                  |
     | Length / Type   |                  |
     | Protocol Addr Type |                  |
-    | Sender MAC Addr |                  |
-    | Sender IP Addr  |                  |
-    | Target MAC Addr |                  |
-    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -175,10 +163,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source MAC      |                  |
     | Length / Type   |                  |
     | Protocol Addr Type |                  |
-    | Sender MAC Addr |                  |
-    | Sender IP Addr  |                  |
-    | Target MAC Addr |                  |
-    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -220,10 +204,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source MAC      |                  |
     | Length / Type   |                  |
     | Protocol Addr Type |                  |
-    | Sender MAC Addr |                  |
-    | Sender IP Addr  |                  |
-    | Target MAC Addr |                  |
-    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -269,10 +249,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source MAC      |                  |
     | Length / Type   |                  |
     | Protocol Addr Type |                  |
-    | Sender MAC Addr |                  |
-    | Sender IP Addr  |                  |
-    | Target MAC Addr |                  |
-    | Target IP Addr  |                  |
 
     Frame length:
 
