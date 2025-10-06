@@ -579,7 +579,7 @@ Sequence Number: **2959815190**
 </v-click>
 <v-click>
 
-Acknowledgement Port: **2065982245**
+Acknowledgement Number: **2065982245**
 <div class="border-2 border-red-500 w-[135px] h-[20px] absolute top-31.5 left-152"></div>
 </v-click>
 <v-click>
