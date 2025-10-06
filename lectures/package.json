@@ -12,6 +12,9 @@
     "build-l2": "slidev build --out dist-l2 --base /slides/l2/ l2-link.md",
     "dev-l2": "slidev l2-link.md",
     "export-l2": "slidev export l2-link.md",
+    "build-l3": "slidev build --out dist-l3 --base /slides/l3/ l3-network.md",
+    "dev-l3": "slidev l3-network.md",
+    "export-l3": "slidev export l3-network.md",
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export"
