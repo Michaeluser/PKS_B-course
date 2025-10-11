@@ -1083,11 +1083,16 @@ self learning! (works exactly the same as in single-switch case!)
 1. KAO, Peyrin. CS 168 Textbook: Introduction to the Internet: Architecture and Protocols. [online]. University of California, Berkeley, 2024 [accessed 2025-09-03]. Available from: https://textbook.cs168.io/
 2. KUROSE, James F. and ROSS, Keith W. Computer Networking: a Top Down Approach – authors' website. [online]. University of Massachusetts Amherst, 2025 [accessed 2025-09-03]. Available from: https://gaia.cs.umass.edu/kurose_ross/index.php
 
-<br><br>
+<br>
 
 ## License
 
-This presentation is based on materials by **[Peyrin Kao / UC Berkeley]**  
-Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+This presentation incorporates material from two sources:
 
-This presentation is also licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+- Portions adapted from **[Peyrin Kao / UC Berkeley]**,
+  licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+- Some slides and figures adapted from **J.F. Kurose and K.W. Ross**,  
+*Computer Networking: A Top-Down Approach*.  
+  © 1993–2025 J.F. Kurose and K.W. Ross. All rights reserved.  
+  Used for educational purposes with attribution.

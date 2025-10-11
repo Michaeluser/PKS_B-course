@@ -30,6 +30,7 @@ layout: default
 - How a Host Routes
 - Introduction to Routing
 - ARP (Cont.)
+- Network Address Translation (NAT)
 - What’s inside a router
 ---
 layout: section
@@ -133,6 +134,8 @@ IP is **media independent**:
 Significant fields in the IPv4 header:
 
 - **Version** -> This will be for v4, as opposed to v6, a 4 bit field= 0100.
+- **Header Length** -> Header Length as there can be options. Typical value 5 without options (32bit words ).
+- **Total Length** -> Size of entire IP packet including header. Can go up to 65535 bytes.
 - **Differentiated Services** -> Used for QoS: DiffServ – DS field or the older IntServ – ToS or Type of Service.
 - **Header Checksum** -> Detect corruption in the IPv4 header.
 - **Time to Live (TTL)** -> Layer 3 hop count. When it becomes zero the router will discard the packet.
@@ -332,25 +335,25 @@ Let’s identify the subnet mask needed for each network:
 
 # Example - Step 2
 
-Determine the N1 range:
+Determine the N1 (400 hosts) range:
 <img src="./images/l3-subnetting-example2.png" class="pt-0 h-72" />
 ---
 
 # Example - Step 3
 
-Determine the N2 range:
+Determine the N2 (252 hosts) range:
 <img src="./images/l3-subnetting-example3.png" class="pt-0 h-80" />
 ---
 
 # Example - Step 4
 
-Determine the N3 range:
+Determine the N3 (63 hosts) range:
 <img src="./images/l3-subnetting-example4.png" class="pt-0 h-90" />
 ---
 
 # Example - Step 5
 
-Determine the N4 range:
+Determine the N4 (one P2P link) range:
 <img src="./images/l3-subnetting-example5.png" class="pt-0 h-90" />
 ---
 
@@ -507,7 +510,7 @@ walkthrough: **sending a packet from A to B via R**
 - A creates link-layer frame containing A-to-B IP packet
   - **R's** MAC address is frame’s destination
 
-<img src="./images/l3-arp1.png" class="pl-30 h-75" />
+<img src="./images/l3-arp1.png" class="pl-0 h-75" />
 ---
 
 # Routing to another subnet: addressing
@@ -515,7 +518,7 @@ walkthrough: **sending a packet from A to B via R**
 - frame sent from A to R
 - frame received at R, level 2 header removed, passed up to IP
 
-<img src="./images/l3-arp2.png" class="pl-30 pt-7.9 h-82.9" />
+<img src="./images/l3-arp2.png" class="pl-0 pt-7.9 h-82.9" />
 ---
 
 # Routing to another subnet: addressing
@@ -523,14 +526,62 @@ walkthrough: **sending a packet from A to B via R**
 - R determines outgoing interface, passes packet with IP source A, destination B to link layer 
 - R creates link-layer frame containing A-to-B IP packet. Frame destination address: B's MAC address
 - transmits link-layer frame
-<img src="./images/l3-arp3.png" class="pl-24.3 h-75" />
+
+<img src="./images/l3-arp3.png" class="pl-0 pt-0 h-75" />
 ---
 
 # Routing to another subnet: addressing
 
 - B receives frame, extracts IP packet destination B
 - B passes packet up protocol stack to IP
-<img src="./images/l3-arp4.png" class="pl-24.4 pt-12.6 h-82.9" />
+
+<img src="./images/l3-arp4.png" class="pl-0 pt-7.9 h-82.9" />
+---
+layout: section
+---
+
+# Network Address Translation (NAT)
+---
+layout: three-slots
+---
+ 
+# NAT
+
+**All devices** in local network share just **one IPv4 address** as far as outside world is concerned.
+<img src="./images/l3-nat-topology.png" class="pl-45 pt-5 h-65" />
+
+::left::
+**All** packets **leaving** local network have **same** source NAT IP address: 138.76.29.7, but different source port numbers.
+
+::right::
+Packets with source or destination in this network have 192.168.0.0/24 address for  source, destination (as usual).
+---
+
+# NAT
+All devices in local network have 32-bit addresses in a “private” IP address space (10/8, 172.16/12, 192.168/16 prefixes) that can only be used in local network
+advantages:
+- just one IP address needed from provider ISP for all devices
+- can change addresses of host in local network without notifying outside world
+- can change ISP without changing addresses of devices in local network
+- security: devices inside local net not directly addressable, visible by outside world
+---
+
+# NAT with Port Rewriting (NAPT/PAT)
+<div class="relative h-100">
+    <img v-click src="./images/l3-nat-rewriting-port1.png" class="absolute inset-0 w-full h-full object-contain rounded-xl"/>
+    <img v-click src="./images/l3-nat-rewriting-port2.png" class="absolute inset-0 w-full h-full object-contain rounded-xl"/>
+    <img v-click src="./images/l3-nat-rewriting-port3.png" class="absolute inset-0 w-full h-full object-contain rounded-xl"/>
+    <img v-click src="./images/l3-nat-rewriting-port4.png" class="absolute inset-0 w-full h-full object-contain rounded-xl"/>
+</div>
+---
+
+# NAT with Port Rewriting - Implementation
+
+NAT router must (transparently):
+- **outgoing packets**: replace (source IP address, port #) of every outgoing packet to (NAT IP address, new port #)
+  - remote clients/servers will respond using (NAT IP address, new port #) as destination address
+- **remember (in NAT translation table)** every (source IP address, port #)  to (NAT IP address, new port #) translation pair
+- **incoming packets:** replace (NAT IP address, new port #) in destination fields of every incoming packet with corresponding (source IP address, port #) stored in NAT table
 ---
 layout: section
 ---
@@ -622,20 +673,6 @@ Example:
 1. Cisco Networking Academy. CCNA: Introduction to Networks.
 2. KUROSE, James F. and ROSS, Keith W. Computer Networking: a Top Down Approach – authors' website. [online]. University of Massachusetts Amherst, 2025 [accessed 2025-09-03]. Available from: https://gaia.cs.umass.edu/kurose_ross/index.php
 
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
+*Some slides and figures in this presentation are adapted from Kurose & Ross course materials.  
+   © 1993–2025 J.F. Kurose and K.W. Ross. All rights reserved.*
 
