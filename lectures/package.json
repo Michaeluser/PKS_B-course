@@ -15,6 +15,8 @@
     "build-l3": "slidev build --out dist-l3 --base /slides/l3/ l3-network.md",
     "dev-l3": "slidev l3-network.md",
     "export-l3": "slidev export l3-network.md",
+    "dev-l4-udp": "slidev l4-udp.md",
+    "export-l4-udp": "slidev export l4-udp.md",
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export"
