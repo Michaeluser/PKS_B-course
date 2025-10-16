@@ -196,7 +196,7 @@ class Server:
         self.sock.sendto(b"Message received...",self.client)
 
     def send_last_response(self):
-        self.sock.sendto(b"End connection message recieved... closing connection", self.client)
+        self.sock.sendto(b"End connection message received... closing connection", self.client)
 
     def quit(self):
         self.sock.close() # correctly closing socket
