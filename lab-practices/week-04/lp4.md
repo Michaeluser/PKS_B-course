@@ -243,5 +243,59 @@ Capture this communication using Wireshark.
 ## Task 2 - ICMP Pinger -> [External Link](https://gaia.cs.umass.edu/kurose_ross/programming/Python_code_only/ICMP_ping_programming_lab_only.pdf)
 Submit the complete client code and screenshots showing your Pinger output for four target hosts — one host from each of four different continents — to MS Teams.
 
+Fixed `checksum` function, replace it in your code:
+```python
+def checksum(string):
+    csum = 0
+    countTo = (len(string) // 2) * 2
+    count = 0
+
+    while count < countTo:
+        thisVal = string[count + 1] * 256 + string[count]
+        csum = csum + thisVal
+        csum = csum & 0xffffffff
+        count = count + 2
+
+    if countTo < len(string):
+        csum = csum + string[len(string) - 1]
+        csum = csum & 0xffffffff
+    
+    csum = (csum >> 16) + (csum & 0xffff)
+    csum = csum + (csum >> 16)
+    answer = ~csum
+    answer = answer & 0xffff
+    answer = answer >> 8 | (answer << 8 & 0xff00)
+    return answer
+```
+
+Fixed `sendOnePing` function, replace it in your code:
+```python
+def sendOnePing(mySocket, destAddr, ID):
+    # Header is type (8), code (8), checksum (16), id (16), sequence (16)
+
+    myChecksum = 0
+    # Make a dummy header with a 0 checksum
+    # struct -- Interpret strings as packed binary data
+    header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
+    data = struct.pack("d", time.time())
+    # Calculate the checksum on the data and the dummy header.
+    
+    myChecksum = checksum(header + data)
+    # Get the right checksum, and put in the header
+    
+    if sys.platform == 'darwin':
+        # Convert 16-bit integers from host to network byte order
+        myChecksum = htons(myChecksum) & 0xffff
+    else:
+        myChecksum = htons(myChecksum)
+
+    header = struct.pack("bbHHh", ICMP_ECHO_REQUEST, 0, myChecksum, ID, 1)
+    packet = header + data
+
+    mySocket.sendto(packet, (destAddr, 1)) # AF_INET address must be tuple, not str
+    # Both LISTS and TUPLES consist of a number of objects
+    # which can be referenced by their position number within the object.
+```
+
 ## Task 3 - Web	Server -> [External Link](https://gaia.cs.umass.edu/kurose_ross/programming/Python_code_only/WebServer_programming_lab_only.pdf)
 Submit the complete server code and screenshots of your client browser demonstrating that the HTML file contents are successfully received from the server to MS Teams.
