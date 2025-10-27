@@ -9,7 +9,7 @@ drawings:
 fonts:
   mono: Fira Mono
 layout: cover
-title: 'Computer and Communication Networks: Link'
+title: 'Computer and Communication Networks: Network'
 ---
 
 # Computer and Communication Networks : Network
