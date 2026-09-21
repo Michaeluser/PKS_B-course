@@ -170,7 +170,6 @@ Postal system analogy: focus on sending infrastructure, not letter contents.
 - ### Asynchrony
 - ### Fault Tolerance
 
-
 ---
 
 # Why Is the Internet Interesting?
@@ -344,7 +343,6 @@ The Internet is a network of networks.
 
         - Analogy: Post offices.
 
-
 <img src="./images/l1-network-of-networks.png" class="pt-5 h-65 mx-auto" />
 
 ---
@@ -487,7 +485,6 @@ layout: default
 1. CEO Alice wants to send a message to CEO Bob.
 2. Alice writes a letter.
 
-
 <img src="./images/l1-header-pa1.png" class="pt-5 h-65 mx-auto" />
 
 ---
@@ -497,7 +494,6 @@ layout: default
 3. Alice passes the letter down to her secretary.
 4. Her secretary puts the letter in an envelope.
 
-
 <img src="./images/l1-header-pa2.png" class="pt-5 h-65 mx-auto" />
 
 ---
@@ -506,7 +502,6 @@ layout: default
 
 5. Her secretary passes the letter down to the mailman.
 6. The mailman puts the envelope in a box.
-
 
 <img src="./images/l1-header-pa3.png" class="pt-5 h-77.85 mx-auto" />
 
@@ -952,7 +947,6 @@ Layers 1 and 2 are implemented in hardware, on the network interface card (NIC).
 Layers 3 and 4 are implemented in software, in the operating system.
 
 Layer 7 is the applications running in software.
-
 
 <img src="./images/l1-layers-osi-1.png" width="90%">
 

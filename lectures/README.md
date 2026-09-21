@@ -35,7 +35,7 @@ Refer to the [Slidev guides](https://sli.dev/guide/) for more commands and synta
 |         | Lecture | Updated |
 | :-------| :---------------------------------------------------------- | ----------------- |
 | 0.      | [Course Organization](https://drive.google.com/file/d/1NE0tbOb5RDXyBeI-xWZY939_pOKGmaVf/view?usp=sharing) | 14.9.2026 |
-| 1.      | [Introduction to network](https://drive.google.com/file/d/1kDqdjvEB4M7f9DG0AICLcrpzBAswoIev/view?usp=sharing) | 14.9.2026 |
+| 1.      | [Introduction to network](https://drive.google.com/file/d/1kDqdjvEB4M7f9DG0AICLcrpzBAswoIev/view?usp=sharing) | 21.9.2026 |
 | 2.      | [Link Layer](https://drive.google.com/file/d/1WeEqdBZupquEd-YRI6J-2u9fm1tZZ1ra/view?usp=sharing) ||
 | 3.      | [Network Layer](https://drive.google.com/file/d/12D9ZqFXC41kNH9gF8lWH3jCmselxi3f2/view?usp=sharing) ||
 | 4.      | [Transport Layer - UDP](https://drive.google.com/file/d/1vV7w0jmAs-_WLyj0I0JHmBoO0dkarpPG/view?usp=sharing) ||
