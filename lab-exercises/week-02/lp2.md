@@ -26,7 +26,7 @@ It has a large user base and well-documented support, including a [user-guide](h
 
 ## Task 1
 
-Analyze captured network traffic to understand headers at different protocol layers (Ethernet, IP, TCP/UDP, etc.). Follow the instructions and examine the headers of the selected frames at all layers. You can use [help guide](./analyze_frames.pdf) that contains the structure of the headers. Replace the value with the corresponding protocol acronym/flag name, if possible.
+Analyze captured network traffic to understand headers at different protocol layers (Ethernet, IP, TCP/UDP, etc.). Follow the instructions and examine the headers of the selected frames at all layers. You can use [help guide](./analyze_frames.pdf) that contains the structure of the headers. Replace the value with the corresponding protocol/flag name, if possible.
 
 1. Examine packet no. 2 in [trace-26](./pcaps/trace-26.pcap):
 
@@ -47,6 +47,11 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Destination MAC |                  |
     | Source MAC      |                  |
     | Length / Type   |                  |
+    | Protocol Addr Type |                  |
+    | Sender MAC Addr |                  |
+    | Sender IP Addr  |                  |
+    | Target MAC Addr |                  |
+    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -57,7 +62,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
-    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -73,7 +77,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Sequence Number |                  |
     | Acknowledgment Number |                  |
     | Header Length   |                  |
-    | Flags           |                  |
     | Checksum        |                  |
 
 3. Examine packet no. 26 in [trace-12](./pcaps/trace-12.pcap):
@@ -85,6 +88,11 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Destination MAC |                  |
     | Source MAC      |                  |
     | Length / Type   |                  |
+    | Protocol Addr Type |                  |
+    | Sender MAC Addr |                  |
+    | Sender IP Addr  |                  |
+    | Target MAC Addr |                  |
+    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -95,7 +103,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
-    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -111,7 +118,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Sequence Number |                  |
     | Acknowledgment Number |                  |
     | Header Length   |                  |
-    | Flags           |                  |
     | Checksum        |                  |
 
 4. Examine packet no. 908 in [trace-12](./pcaps/trace-12.pcap):
@@ -123,6 +129,11 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Destination MAC |                  |
     | Source MAC      |                  |
     | Length / Type   |                  |
+    | Protocol Addr Type |                  |
+    | Sender MAC Addr |                  |
+    | Sender IP Addr  |                  |
+    | Target MAC Addr |                  |
+    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -133,7 +144,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
-    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -155,7 +165,7 @@ Analyze captured network traffic to understand headers at different protocol lay
     |-----------------|------------------|
     | QR              |                  |
 
-5. Find the response corresponding to packet no. 908 and examine L3 header (Help: check no. 922):
+5. Find the response corresponding to packet no. 908 and examine its contents:
    
     a) Layer 2 header:
 
@@ -164,6 +174,11 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Destination MAC |                  |
     | Source MAC      |                  |
     | Length / Type   |                  |
+    | Protocol Addr Type |                  |
+    | Sender MAC Addr |                  |
+    | Sender IP Addr  |                  |
+    | Target MAC Addr |                  |
+    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -174,7 +189,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
-    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -205,6 +219,11 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Destination MAC |                  |
     | Source MAC      |                  |
     | Length / Type   |                  |
+    | Protocol Addr Type |                  |
+    | Sender MAC Addr |                  |
+    | Sender IP Addr  |                  |
+    | Target MAC Addr |                  |
+    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -215,7 +234,6 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
-    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -225,14 +243,13 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Type            |                  |
     | Code            |                  |
 
-    c) Find the response corresponding to packet no. 2 and examine L3 header (Help: check `info` column):
+    c) Find the response corresponding to packet no. 2 and examine its contents:
 
     | Field           |  Value           |
     |-----------------|------------------|
     | Version         |                  |
     | IHL             |                  |
     | Total Length    |                  |
-    | Flags           |                  |
     | Time to Live    |                  |
     | Protocol        |                  |
     | Header Checksum |                  |
@@ -251,6 +268,11 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Destination MAC |                  |
     | Source MAC      |                  |
     | Length / Type   |                  |
+    | Protocol Addr Type |                  |
+    | Sender MAC Addr |                  |
+    | Sender IP Addr  |                  |
+    | Target MAC Addr |                  |
+    | Target IP Addr  |                  |
 
     Frame length:
 
@@ -264,7 +286,21 @@ Analyze captured network traffic to understand headers at different protocol lay
     | Source Addr     |                  |
     | Destination Addr|                  |
 
+
 ## Task 2
+
+In this part of the lab, we will learn how to write filters in Wireshark. Use the [Wireshark Cheat Sheet](./Wireshark-Cheat-Sheet.pdf) as a quick reference for composing filters.
+
+1. Display only ARP packets:
+2. Display only TCP segments on port 80: 
+3. Display HTTP packets from the source IP address 192.168.1.33:
+4. Display only packets that contain SYN flag (beginning of a TCP connection):
+5. Display only HTTP POST requests:
+6. Display all HTTP GET requests sent to the IP address 86.110.225.178:
+7. Display packets with the source MAC address 00:02:CF:AB:A2:4C:
+8. Display all non-HTTP communications:
+
+## Task 3
 
 We’ll investigate the Ethernet protocol and the ARP protocol. Let’s begin by capturing a set of Ethernet frames to study. To do this, of course, you’ll need access to a wired Ethernet connection for your PC or Mac – not necessarily a common scenario these days, given the popularity of wireless WiFi and cellular access. If you’re unable to run Wireshark on a live Ethernet connection, you can download a packet trace [lp2-ethernet](./lp2-ethernet.pcapng) that was captured while following the steps below.
 
@@ -282,15 +318,15 @@ In answering the questions below, you can use either your own live trace, or use
 1. What is the 48-bit Ethernet address of your computer?
 2. What is the 48-bit destination address in the Ethernet frame?  Is this the Ethernet address of [freefood.sk](http://freefood.sk)? What device has this as its Ethernet address?
 3. What is the hexadecimal value for the two-byte Frame type field in the Ethernet frame carrying the HTTP GET request?  What upper layer protocol does this correspond to?
-4. How many bytes from the very start of the Ethernet frame does the ASCII “G” in “GET” appear in the Ethernet frame? Do not count any preamble bits in your count, i.e., assume that the Ethernet frame begins with the Ethernet frame's destination address.
+4. How many bytes from the very start of the Ethernet frame does the ASCII "G" in "GET" appear in the Ethernet frame? Do not count any preamble bits in your count, i.e., assume that the Ethernet frame begins with the Ethernet frame's destination address.
 
 Next, answer the following questions, based on the contents of the Ethernet frame containing the first byte of the HTTP response message.
 
 5. What is the value of the Ethernet source address? Is this the address of your computer, or of [freefood.sk](http://freefood.sk)? What device has this as its Ethernet address?
 6. What is the destination address in the Ethernet frame?  Is this the Ethernet address of your computer?
 7. Give the hexadecimal value for the two-byte Frame type field. What upper layer protocol does this correspond to?
-8. How many bytes from the very start of the Ethernet frame does the ASCII “O” in “OK” (i.e., the HTTP response code) appear in the Ethernet frame? Do not count any preamble bits in your count, i.e., assume that the Ethernet frame begins with the Ethernet frame's destination address.
-9. How many Ethernet frames (each containing an IP packet, each containing a TCP segment) carry data that is part of the complete HTTP “OK 200 ...” reply message?
+8. How many bytes from the very start of the Ethernet frame does the ASCII "O" in "OK" (i.e., the HTTP response code) appear in the Ethernet frame? Do not count any preamble bits in your count, i.e., assume that the Ethernet frame begins with the Ethernet frame's destination address.
+9. How many Ethernet frames (each containing an IP packet, each containing a TCP segment) carry data that is part of the complete HTTP "OK 200 ..." reply message?
 
 **ARP Caching**
 
@@ -338,15 +374,55 @@ We’ve looked the ARP request message sent by your computer running Wireshark, 
 
 21. Why are there no ARP replies in your trace that are sent in response to these other ARP request messages?  
 
-## Task 3
+## Task 4
 
-In this part of the lab, we will learn how to write filters in Wireshark. Use the [Wireshark Cheat Sheet](./Wireshark-Cheat-Sheet.pdf) as a quick reference for composing filters.
+### Subtask 4.1 - one-hop transmission delay
+Consider the figure below, in which a single router is transmitting packets, each of length L bits, over a single link with transmission rate R Mbps to another router at the other end of the link.
 
-1. Display only ARP packets:
-2. Display only TCP segments on port 80: 
-3. Display HTTP packets from the source IP address 192.168.1.33:
-4. Display only packets that contain SYN flag (beginning of a TCP connection):
-5. Display only HTTP POST requests:
-6. Display all HTTP GET requests sent to the IP address 86.110.225.178:
-7. Display packets with the source MAC address 00:02:CF:AB:A2:4C:
-8. Display all non-HTTP communications:
+<img src="./l2-le-21.png" alt="l2-le-21" width="400">
+
+Suppose that the packet length is L= 6000 bits, and that the link transmission rate along the link to router on the right is R = 400 Mbps.
+
+Round your answer to two decimals after leading zeros.
+
+a) What is the transmission delay?
+
+b) What is the maximum number of packets per second that can be transmitted by this link?
+
+### Subtask 4.2 - end-end delay
+Consider the figure below, with three links, each with the specified transmission rate and link length.
+
+<img src="./l2-le-22.png" alt="l2-le-22" width="400">
+
+Link 1:
+ - transmission rate: 20 Mbps
+ - link length: 5 km
+
+Link 2:
+ - transmission rate: 800 Mbps
+ - link length: 300 km
+
+Link 3:
+ - transmission rate: 800 Mbps
+ - link length: 8 km
+  
+Assume the length of a packet is 10000 bits. The speed of light propagation delay on each link is 3x10^8 m/sec
+
+Round your answer to two decimals after leading zeros.
+
+What is the total delay?
+
+### Subtask 4.3 - End to End Throughput and Bottleneck Links
+Consider the scenario shown below, with four different servers connected to four different clients over four three-hop paths. The four pairs share a common middle hop with a transmission capacity of R = 400 Mbps. The four links from the servers to the shared link have a transmission capacity of R<sub>S1-4</sub> = 70 Mbps. Each of the four links from the shared middle link to a client has a transmission capacity of R<sub>C1-4</sub> = 20 Mbps.
+
+<img src="./l2-le-23.png" alt="l2-le-23" width="400">
+
+a) What is the maximum achievable end-end throughput (in Mbps) for each of four client-to-server pairs, assuming that the middle link is fairly shared (divides its transmission rate equally)?
+
+b) Which link is the bottleneck link? Format as R<sub>C</sub>, R<sub>S</sub>, or R
+
+c) Assuming that the servers are sending at the maximum rate possible, what are the link utilizations for the server links (R<sub>S</sub>)? Answer as a decimal.
+
+d) Assuming that the servers are sending at the maximum rate possible, what are the link utilizations for the client links (R<sub>C</sub>)? Answer as a decimal.
+
+e) Assuming that the servers are sending at the maximum rate possible, what is the link utilizations for the shared link (R)? Answer as a decimal.
