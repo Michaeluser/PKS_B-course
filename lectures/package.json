@@ -32,9 +32,11 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@mermaid-js/layout-elk": "^0.1.9",
     "@slidev/cli": "^52.1.0",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
+    "mermaid": "^11.9.0",
     "vue": "^3.5.18"
   },
   "devDependencies": {

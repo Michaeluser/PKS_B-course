@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@mermaid-js/layout-elk':
+        specifier: ^0.1.9
+        version: 0.1.9(mermaid@11.9.0)
       '@slidev/cli':
         specifier: ^52.1.0
         version: 52.1.0(@babel/parser@7.28.0)(@nuxt/kit@3.18.1)(@types/markdown-it@14.1.2)(@types/node@22.17.1)(@vue/compiler-sfc@3.5.18)(markdown-it-async@2.2.0)(playwright-chromium@1.63.0)(postcss@8.5.6)(tsx@4.20.4)
@@ -17,6 +20,9 @@ importers:
       '@slidev/theme-seriph':
         specifier: '*'
         version: 0.25.0
+      mermaid:
+        specifier: ^11.9.0
+        version: 11.9.0
       vue:
         specifier: ^3.5.18
         version: 3.5.18(typescript@5.9.2)
@@ -395,6 +401,11 @@ packages:
 
   '@mdit-vue/types@2.1.4':
     resolution: {integrity: sha512-QiGNZslz+zXUs2X8D11UQhB4KAMZ0DZghvYxa7+1B+VMLcDtz//XHpWbcuexjzE3kBXSxIUTPH3eSQCa0puZHA==}
+
+  '@mermaid-js/layout-elk@0.1.9':
+    resolution: {integrity: sha512-HuvaqFZBr6yT9PpWYockvKAZPJVd89yn/UjOYPxhzbZxlybL2v+2BjVCg7MVH6vRs1irUohb/s42HEdec1CCZw==}
+    peerDependencies:
+      mermaid: ^11.0.2
 
   '@mermaid-js/parser@0.6.2':
     resolution: {integrity: sha512-+PO02uGF6L6Cs0Bw8RpGhikVvMWEysfAyl27qTlroUB8jSWr1lL0Sf6zi78ZxlSnmgSY2AMMKVgghnN9jTtwkQ==}
@@ -1401,6 +1412,9 @@ packages:
 
   electron-to-chromium@1.5.199:
     resolution: {integrity: sha512-3gl0S7zQd88kCAZRO/DnxtBKuhMO4h0EaQIN3YgZfV6+pW+5+bf2AdQeHNESCoaQqo/gjGVYEf2YM4O5HJQqpQ==}
+
+  elkjs@0.9.3:
+    resolution: {integrity: sha512-f/ZeWvW/BCXbhGEf1Ujp29EASo/lk1FDnETgNKwJrsVvGZhUWCZyg3xLJjAsxfOmt8KjswHmI5EwCQcPMpOYhQ==}
 
   emoji-regex@10.4.0:
     resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
@@ -3065,6 +3079,12 @@ snapshots:
 
   '@mdit-vue/types@2.1.4': {}
 
+  '@mermaid-js/layout-elk@0.1.9(mermaid@11.9.0)':
+    dependencies:
+      d3: 7.9.0
+      elkjs: 0.9.3
+      mermaid: 11.9.0
+
   '@mermaid-js/parser@0.6.2':
     dependencies:
       langium: 3.3.1
@@ -4428,6 +4448,8 @@ snapshots:
   ee-first@1.1.1: {}
 
   electron-to-chromium@1.5.199: {}
+
+  elkjs@0.9.3: {}
 
   emoji-regex@10.4.0: {}
 
